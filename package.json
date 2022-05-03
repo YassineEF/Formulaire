@@ -1,0 +1,21 @@
+{
+  "name": "formulaire",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w ./css/scss/main.scss:./css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YassineEF/Formulaire.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YassineEF/Formulaire/issues"
+  },
+  "homepage": "https://github.com/YassineEF/Formulaire#readme"
+}
