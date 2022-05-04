@@ -56,13 +56,14 @@ header #logo img {
 .contact .containerForm h3 {
   width: 100%;
   text-align: center;
-  color: red;
+  color: green;
 }
 .contact .containerForm .row100 {
   position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 30px;
 }
 .contact .containerForm .row100 .col {
   position: relative;
@@ -101,6 +102,12 @@ header #logo img {
   display: block;
   transition: 0.5s;
   pointer-events: none;
+}
+.contact .containerForm .row100 .col .error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
 }
 .contact .containerForm .row100 .col .inputBox input:focus + .text, .contact .containerForm .row100 .col .inputBox input:valid + .text, .contact .containerForm .row100 .col .inputBox textarea:focus + .text, .contact .containerForm .row100 .col .inputBox textarea:valid + .text {
   top: -35px;

@@ -3,16 +3,17 @@
     $FirstName = $_POST['firstName'];
     $LastName = $_POST['lastName'];
     $Email = $_POST['email'];
-    $MessageText = $_POST['message'];
+    $messageText = $_POST['messageText'];
 
-    $completeName = $FirstName ."  ".$LastName; 
+    $subject = $FirstName ."  ".$LastName; 
     $to = "yelfallouhi@gmail.com";
 
-    $headers = "From:jujo@lolo.it \r\n";
+    $headers = 'From:'.$Email . "\r\n";
 
+    $message = "From: ".$Email." \n".$messageText;
     // $headers .= "Content-type: text/html\r\n";
 
-    $emailSend = mail ($to,$completeName,$MessageText,$headers);
+    $emailSend = mail ($to, $subject, $message, $headers);
          
     if( $emailSend == true ) {
        echo "Message sent successfully...";
