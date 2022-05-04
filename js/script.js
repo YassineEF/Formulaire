@@ -10,7 +10,8 @@ let MessageError = document.getElementById("TextError")
 let ResponseMessage = document.getElementById("Response")
 //REGEX
 let EmailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-let NamePattern = /^[a-zA-Z0-9_-]{3,15}$/;
+let NamePattern = /^[a-zA-Z0-9 _-]{3,15}$/;
+let TextPattern = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
 
 send.addEventListener("click", async function () {
 
@@ -33,7 +34,7 @@ send.addEventListener("click", async function () {
         LastError.innerHTML = "This field is required, please fill it"
         error = false
     }else  if(!NamePattern.test(LastName.value)){
-        LastError.innerHTML = "Do not use specials character less than 3 characters";
+        LastError.innerHTML = "Do not use specials character or less than 3 characters";
         error = false;
     }
     
@@ -47,8 +48,10 @@ send.addEventListener("click", async function () {
     if(Message.value === ""){
         MessageError.innerHTML="This field is required, please fill it"
         error = false 
+    }else if(!TextPattern.test(Message.value)){
+        MessageError.innerHTML="Please do not use special charcter"
+        error = false 
     }
-
     if(error){
 
         let xhttp = new XMLHttpRequest();
