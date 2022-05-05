@@ -1,11 +1,13 @@
+//Form Fields
 const send = document.querySelector("#button");
 const FirstName = document.getElementById("fName");
-let FirstError = document.getElementById("FirstError")
 const LastName = document.getElementById("lName");
-let LastError = document.getElementById("LastError")
 const Email = document.getElementById("email");
-let EmailError = document.getElementById("EmailError")
 const Message = document.getElementById("message");
+//Error & Message Fields
+let FirstError = document.getElementById("FirstError")
+let LastError = document.getElementById("LastError")
+let EmailError = document.getElementById("EmailError")
 let MessageError = document.getElementById("TextError")
 let ResponseMessage = document.getElementById("Response")
 //REGEX
@@ -21,15 +23,16 @@ send.addEventListener("click", async function () {
     MessageError.innerHTML = "";
     let error = true;
 
-
+    //Check the FirstName field
     if(FirstName.value === ""){
         FirstError.innerHTML = "This field is required, please fill it"
         error = false
     }else if(!NamePattern.test(FirstName.value)){
         FirstError.innerHTML = "Do not use specials character or less than 3 characters";
         error = false;
-    } 
+    }
     
+    //Check the LastName field
     if(LastName.value === ""){
         LastError.innerHTML = "This field is required, please fill it"
         error = false
@@ -38,6 +41,7 @@ send.addEventListener("click", async function () {
         error = false;
     }
     
+    //Check the Email field
     if(Email.value === ""){
         EmailError.innerHTML="This field is required, please fill it"
         error = false
@@ -45,6 +49,7 @@ send.addEventListener("click", async function () {
         EmailError.innerHTML = "Invalid Email Format";
         error = false
     }
+    //Check the Message field
     if(Message.value === ""){
         MessageError.innerHTML="This field is required, please fill it"
         error = false 
@@ -52,6 +57,7 @@ send.addEventListener("click", async function () {
         MessageError.innerHTML="Please do not use special charcter"
         error = false 
     }
+    //send Data AJAX
     if(error){
 
         let xhttp = new XMLHttpRequest();
@@ -72,6 +78,5 @@ send.addEventListener("click", async function () {
               Message.value="";
             }
           };
-        // console.log(xhttp.status);
     }
 });
