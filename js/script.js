@@ -16,7 +16,8 @@ let NamePattern = /^[a-zA-Z0-9 _-]{3,15}$/;
 let TextPattern = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
 
 send.addEventListener("click", async function () {
-
+    
+    send.style.pointerEvents = "none";
     FirstError.innerHTML = "";
     LastError.innerHTML = "";
     EmailError.innerHTML = "";
@@ -76,6 +77,7 @@ send.addEventListener("click", async function () {
               LastName.value="";
               Email.value="";
               Message.value="";
+              send.style.pointerEvents = "auto";
             }
           };
     }
